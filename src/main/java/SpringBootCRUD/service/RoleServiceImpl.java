@@ -40,7 +40,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public Role getRoleByName(String role) {
-        return roleRepository.getRoleByName(role);
+    public Role getRoleByRole(String role) {
+        return roleRepository.getRoleByRole(role);
     }
 }

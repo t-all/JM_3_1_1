@@ -12,6 +12,8 @@
 	<artifactId>SpringBoot_CRUD</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringBoot_CRUD</name>
+
+
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -57,6 +59,11 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>JM_3_1_1</groupId>
+			<artifactId>SpringBoot_CRUD</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

@@ -81,7 +81,7 @@ public class UserController {
     public String addUser(@ModelAttribute User user, @RequestParam(value = "checkBoxRoles") String[] checkBoxRoles) {
         Set<Role> roleSet = new HashSet<>();
         for (String role : checkBoxRoles) {
-            roleSet.add(roleService.getRoleByName(role));
+            roleSet.add(roleService.getRoleByRole(role));
         }
         user.setRoles(roleSet);
         userService.addUser(user);
@@ -101,7 +101,7 @@ public class UserController {
     public String update(@ModelAttribute User user, @RequestParam(value = "checkBoxRoles") String[] checkBoxRoles) {
         Set<Role> roleSet = new HashSet<>();
         for (String roles : checkBoxRoles) {
-            roleSet.add(roleService.getRoleByName(roles));
+            roleSet.add(roleService.getRoleByRole(roles));
         }
         user.setRoles(roleSet);
         userService.updateUser(user);

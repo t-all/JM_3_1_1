@@ -33,7 +33,7 @@
             <td th:text="${user.roles}"></td>
 
             <td>
-                <form th:action="@{/edit/{id}(id=${user.id})}">
+                <form th:action="@{edit/{id}(id=${user.getId()})}">
                     <input type="submit" value="Edit"/>
                 </form>
             </td>

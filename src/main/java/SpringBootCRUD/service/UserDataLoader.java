@@ -3,11 +3,9 @@ package SpringBootCRUD.service;
 import SpringBootCRUD.model.Role;
 import SpringBootCRUD.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.security.Security;
 import java.util.Set;
 
 @Component
@@ -15,12 +13,11 @@ public class UserDataLoader {
 
     RoleService roleService;
     UserService userService;
-    PasswordEncoder passwordEncoder;
 
-    public UserDataLoader(RoleService roleService, UserService userService, PasswordEncoder passwordEncoder) {
+    @Autowired
+    public UserDataLoader(RoleService roleService, UserService userService) {
         this.roleService = roleService;
         this.userService = userService;
-        this.passwordEncoder = passwordEncoder;
     }
 
     @PostConstruct
@@ -30,7 +27,7 @@ public class UserDataLoader {
         roleService.addRole(role1);
         roleService.addRole(role2);
 
-        User user1 = new User("Bob", "bob", "Bobby", "Bob", "Moon 13", "+375892154", "bob@test.com");
+        User user1 = new User("Bob", "qwe", "Bobby", "Bob", "Moon 13", "+375892154", "bob@test.com");
         User user2 = new User("Bil", "qwe", "Billy", "Bil", "Earth 1", "+935892154", "bil@test.com");
         User user3 = new User("Tom", "qwe", "Tommy", "Tom", "Venus 5", "+475892154", "tom@test.com");
         User user4 = new User("Sam", "qwe", "Sammy", "Sam", "Jupiter 34", "+175892154", "sam@test.com");

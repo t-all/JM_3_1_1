@@ -55,7 +55,7 @@ public class UserController {
     }
 
     @PostMapping("/admin/create")
-    public String addUser(@ModelAttribute User user, @RequestParam(value = "checkBoxRoles") String[] checkBoxRoles) {
+    public String addUser(@ModelAttribute User user, @RequestParam(defaultValue = "checkBoxRoles") String[] checkBoxRoles) {
         Set<Role> roleSet = new HashSet<>();
         for (String role : checkBoxRoles) {
             roleSet.add(roleService.getRoleByRole(role));
@@ -75,7 +75,7 @@ public class UserController {
     }
 
     @PutMapping(value = "/edit")
-    public String update(@ModelAttribute User user, @RequestParam(value = "checkBoxRoles") String[] checkBoxRoles) {
+    public String update(@ModelAttribute User user, @RequestParam(defaultValue = "checkBoxRoles") String[] checkBoxRoles) {
         Set<Role> roleSet = new HashSet<>();
         for (String roles : checkBoxRoles) {
             roleSet.add(roleService.getRoleByRole(roles));
